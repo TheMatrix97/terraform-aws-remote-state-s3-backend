@@ -1,6 +1,6 @@
 output "kms_key" {
   description = "The KMS customer master key to encrypt state buckets."
-  value       = try(aws_kms_key.this, null)
+  value       = try(aws_kms_key.this[0], null)
 }
 
 output "kms_key_alias" {

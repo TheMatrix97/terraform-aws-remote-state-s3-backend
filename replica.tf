@@ -94,7 +94,7 @@ resource "aws_iam_policy" "replication" {
       "Action": [
         "kms:Decrypt"
       ],
-      "Resource": "${aws_kms_key.this.arn}",
+      "Resource": "${aws_kms_key.this[0].arn}",
       "Condition": {
         "StringLike": {
           "kms:ViaService": "s3.${data.aws_region.state.name}.amazonaws.com",

@@ -51,7 +51,7 @@ resource "aws_iam_policy" "terraform" {
         "kms:DescribeKey",
         "kms:GenerateDataKey"
       ],
-      "Resource": "${aws_kms_key.this.arn}"
+      "Resource": "${aws_kms_key.this[0].arn}"
     }
   ]
 }
