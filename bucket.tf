@@ -21,7 +21,7 @@ resource "aws_kms_key" "this" {
 resource "aws_kms_alias" "this" {
   count = length(aws_kms_key.this) #Conditional creation
   name          = "alias/${var.kms_key_alias}"
-  target_key_id = aws_kms_key.this[0].key_id
+  target_key_id = try(aws_kms_key.this[0].key_id, null)
 }
 
 #---------------------------------------------------------------------------------------------------
