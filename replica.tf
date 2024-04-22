@@ -12,7 +12,7 @@ data "aws_region" "replica" {
 #---------------------------------------------------------------------------------------------------
 
 resource "aws_kms_key" "replica" {
-  count    = var.enable_replication ? 1 : 0
+  count    = var.enable_replication && lenght(aws_kms_key.this) ? 1 : 0
   provider = aws.replica
 
   description             = var.kms_key_description

@@ -207,6 +207,12 @@ variable "s3_bucket_name_replica" {
   }
 }
 
+variable "s3_bucket_sse_algorithm" {
+  description = "Set S3 Bucket SSE Algorithm Type"
+  type        = string
+  default     = "aws:kms"
+}
+
 #---------------------------------------------------------------------------------------------------
 # Optionally specifying a fixed iam policy name
 #---------------------------------------------------------------------------------------------------
